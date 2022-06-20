@@ -1,0 +1,27 @@
+name: Remote Action
+
+
+
+inputs:
+
+  name:
+
+    required: true
+
+    description: 'Name to say hello'
+
+
+
+
+
+runs:
+
+  using: "composite"
+
+
+
+  steps:        
+
+     - name: Remote Action      
+
+       run: echo "Hello, ${{ inputs.name }}!"
