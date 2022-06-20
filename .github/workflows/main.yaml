@@ -1,0 +1,29 @@
+name: TestingRemoteActions
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name'     
+        required: true
+     
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: RemoteAction
+        uses: ./.github/actions/remoteaction
+        with:
+          name: ${{ inputs.name }}
+
+      - name: RemoteAction
+        uses: ./.github/actions/remoteaction
+        with:
+          name: ${{ inputs.name }}
+
+      - name: RemoteAction
+        uses: ./.github/actions/remoteaction
+        with:
+          name: ${{ inputs.name }}
