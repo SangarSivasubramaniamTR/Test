@@ -1,6 +1,14 @@
 name: Remote Action
 
-
+    - uses: actions/checkout@v2
+      with:
+        repository: <owner>/setup-tool
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        persist-credentials: false
+        path: ./.github/actions/setup-tool
+    - uses: ./.github/actions/setup-tool
+      with:
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
 inputs:
 
