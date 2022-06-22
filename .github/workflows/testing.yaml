@@ -1,6 +1,15 @@
 name: Remote Action
 
 
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/SangarSivasubramaniamTR/Actions/blob/main/.github/actions/remoteaction/action.yaml/setup-tool
+        token: ${{ secrets.ACCESS_TOKEN }}
+        persist-credentials: false
+        path: ./.github/actions/setup-tool
+    - uses: ./.github/actions/setup-tool
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
 
 inputs:
 
@@ -20,16 +29,6 @@ runs:
 
 
   steps:
-      - uses: actions/checkout@v2
-      with:
-        repository: https://github.com/SangarSivasubramaniamTR/Actions/blob/main/.github/actions/remoteaction/action.yaml/setup-tool
-        token: ${{ secrets.ACCESS_TOKEN }}
-        persist-credentials: false
-        path: ./.github/actions/setup-tool
-    - uses: ./.github/actions/setup-tool
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
-
 
      - name: Remote Action      
 
