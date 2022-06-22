@@ -28,22 +28,6 @@ jobs:
 
         
         
-        
-      - uses: actions/checkout@v2
-
-      - name: RemoteAction
-        uses: ./.github/actions/remoteaction
-        with:
-          name: ${{ inputs.name }}
-
-      - name: RemoteAction
-        uses: ./.github/actions/remoteaction
-        with:
-          name: ${{ inputs.name }}
-
-      - name: RemoteAction
-        uses: ./.github/actions/remoteaction
-        with:
-          name: ${{ inputs.name }}
+    
 
    
