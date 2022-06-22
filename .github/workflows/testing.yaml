@@ -12,7 +12,15 @@ inputs:
 
 
 
-    - uses: actions/checkout@v2
+
+runs:
+
+  using: "composite"
+
+
+
+  steps:
+      - uses: actions/checkout@v2
       with:
         repository: https://github.com/SangarSivasubramaniamTR/Actions/blob/main/.github/actions/remoteaction/action.yaml/setup-tool
         token: ${{ secrets.ACCESS_TOKEN }}
@@ -22,13 +30,6 @@ inputs:
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
 
-runs:
-
-  using: "composite"
-
-
-
-  steps:        
 
      - name: Remote Action      
 
