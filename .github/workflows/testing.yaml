@@ -1,16 +1,5 @@
 name: Remote Action
 
-
-    - uses: actions/checkout@v2
-      with:
-        repository: ./.github/actions/remoteaction/action.yaml/setup-tool
-        token: ${{ secrets.ACCESS_TOKEN }}
-        persist-credentials: false
-        path: ./.github/actions/setup-tool
-    - uses: ./.github/actions/setup-tool
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
-
 inputs:
 
   name:
@@ -33,3 +22,5 @@ runs:
      - name: Remote Action      
 
        run: echo "Hello, ${{ inputs.name }}!"
+       
+   
