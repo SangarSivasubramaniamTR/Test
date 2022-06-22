@@ -12,6 +12,23 @@ jobs:
   
     runs-on: ubuntu-latest
     steps:
+        
+        
+      - uses: actions/checkout@v2
+        with:
+          repository: SangarSivasubramaniamTR/Actions
+          token: ${{ secrets.ACCESS_TOKEN }}
+          persist-credentials: false
+          path: ./.github/actions/remoteaction
+        
+        
+      - uses: ./.github/actions/remoteaction
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+        
+        
+        
       - uses: actions/checkout@v2
 
       - name: RemoteAction
@@ -28,3 +45,5 @@ jobs:
         uses: ./.github/actions/remoteaction
         with:
           name: ${{ inputs.name }}
+
+   
