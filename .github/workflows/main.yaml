@@ -9,9 +9,19 @@ on:
      
 jobs:
   build:
+  
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      #- uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/SangarSivasubramaniamTR/Actions/blob/main/.github/actions/remoteaction/action.yaml/setup-tool
+        token: ${{ secrets.ACCESS_TOKEN }}
+        persist-credentials: false
+        path: ./.github/actions/setup-tool
+    - uses: ./.github/actions/setup-tool
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: RemoteAction
         uses: ./.github/actions/remoteaction
