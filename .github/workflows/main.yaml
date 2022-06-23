@@ -1,41 +1,87 @@
 name: TestingRemoteActions
 
 on:
+
   workflow_dispatch:
+
     inputs:
+
       name:
-        description: 'Name'     
+
+        description: 'Name'    
+
         required: true
-    
-        
-env: 
-  TESTING : ${{ secrets.TESTING }}
-     
+
+
+
 jobs:
+
   build:
-  
+
     runs-on: ubuntu-latest
+
     steps:
-        
-        
-      
+
       - uses: actions/checkout@v3
-      - name: My first step
-        uses: ./.github/actions/my-action
+
+        with:
+
+          repository: SangarSivasubramaniamTR/Actions
+
+          token: ${{ secrets.TTOKEN }}
+
+          persist-credentials: false
+
+       
+
+      - uses: ./.github/actions/remoteaction
+
+        with:
+
+          name: ${{ inputs.name }}
+
+
+
+
+
+
+
+
+#name: TestingRemoteActions
+
+#on:
+ # workflow_dispatch:
+ #   inputs:
+ #     name:
+ #       description: 'Name'     
+ #       required: true
+  
+        
+#env: 
+ # TESTING : ${{ secrets.TESTING }}
+     
+#jobs:
+ # build:
+  
+ #   runs-on: ubuntu-latest
+ #   steps:
+     # - uses: actions/checkout@v3
+     # - name: My first step
+     #  uses: ./.github/actions/my-action
         
     
-      - uses: actions/checkout@master
-        with:
-          repository: SangarSivasubramaniamTR/Actions
-          token: ${{ secrets.TTOKEN}}
-          persist-credentials: false
-          path: ./.github/actions/remoteaction
+  #    - uses: actions/checkout@v3
+  #      with:
+  #        repository: SangarSivasubramaniamTR/Actions
+  #        token: ${{ secrets.TTOKEN}}
+  #        persist-credentials: false
+  #        path: ./.github/actions/remoteaction
           #path : https://github.com/SangarSivasubramaniamTR/Actions/blob/main/.github/actions/remoteaction/action.yaml
         
         
-      - uses: ./.github/actions/remoteaction
-        with:
-          name: ${{ inputs.name }}
+  #    - uses: ./.github/actions/remoteaction
+  #      with:
+   #       name: ${{ inputs.name }}
 
         
         
