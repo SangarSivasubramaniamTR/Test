@@ -29,7 +29,8 @@ jobs:
           repository: SangarSivasubramaniamTR/Actions
           token: ${{ secrets.TTOKEN}}
           persist-credentials: false
-          path: ./.github/actions/remoteaction
+          #path: ./.github/actions/remoteaction
+          path : https://github.com/SangarSivasubramaniamTR/Actions/blob/main/.github/actions/remoteaction/action.yaml
         
         
       - uses: ./.github/actions/remoteaction
