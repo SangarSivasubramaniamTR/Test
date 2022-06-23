@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: SangarSivasubramaniamTR/Actions
-          token: ${{ secrets.TTOKEN }}
+          token: ${{ secrets.TESTING }}
           persist-credentials: false
           path: ./.github/actions/remoteaction
         
